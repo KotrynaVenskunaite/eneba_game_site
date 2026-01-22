@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
+import Fuse from "fuse.js";
 
-function GameComponent() {
+function GameComponent(props) {
   const [data, setData] = useState([]);
   useEffect(() => {
     fetch("http://localhost:8081/games")
@@ -9,11 +10,26 @@ function GameComponent() {
       .catch((err) => console.log(err));
   }, []);
 
+  const fuse = new Fuse(data, {
+    keys: ["game_name_search"],
+    // threshold: 0.4,
+    includeScore: true,
+  });
+
+  const fuseResult = fuse.search(props.query);
+
   function calculatePrice(originalPrice, percentage) {
     let price = originalPrice - originalPrice * (percentage / 100);
 
     return Math.round(price * 100) / 100;
   }
+
+  let searchResult = props.query
+    ? fuseResult.map((fuseResult) => fuseResult.item)
+    : data;
+
+  let searchNumber = props.query ? fuseResult.length : -1;
+  console.log(searchNumber);
 
   function imageSource(platform) {
     switch (platform) {
@@ -30,7 +46,7 @@ function GameComponent() {
 
   return (
     <>
-      {data.map((d, index) => (
+      {searchResult.map((d, index) => (
         <div key={index} className="mainGameFrame">
           <div className="gameImage">
             <img src={d.image_url} alt="image"></img>
