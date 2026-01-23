@@ -4,27 +4,21 @@
 }
 
 body{
-    /* padding: min(50px, 7%); */
-     background-color: #4618ac;
+    background-color: #4618ac;
 }
 
 .gameContainer
 {
-    background-color: rgb(87, 87, 87);
     display:grid;
     grid-gap:20px;
+   
 
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-template-rows: auto 1fr auto;
 
-    /* position: static; */
-
     box-sizing: border-box;
-
-    /* align-content: normal;
-    justify-content:center;
-    align-items: normal;
-    justify-items: normal; */
+    
+    justify-items: center; 
 }
 
 .mainGameFrame
@@ -36,7 +30,6 @@ body{
     font-weight:800;
     line-height:1;
     font-size:1.2rem;
-    /* background:#1f0a4d; */
 
 
    word-break: break-word;
@@ -47,8 +40,6 @@ body{
    max-width: 255px;
    min-width: 165px;
    max-height: 500px;
-    /* width: auto;
-    height: auto; */
 
     overflow: hidden;
 }
@@ -67,16 +58,10 @@ body{
     flex-direction: column;
 
     position: relative;
-    /* width: 272px;
-    height: 168px;
-    left: 0px;
-    top: 77px; */
     width: 100%;
     height: 100%;
 
     background:#1f0a4d;
-    /* left: 0px;
-    top: 77px; */
 }
 
 .infoFrame{
@@ -85,41 +70,17 @@ body{
     background: rgba(7, 7, 7, 0);
     width: 100%;
 
-    /* display: flex; */
     align-items: center;
     justify-content: center;
-    /* position: absolute; */
-    /* top: -22px; */
     height: 55%;
-    /* left: 0px; */
     top: 55%;
     transition: 0.3s ease;
-    /* animation: contract 1s;
-    animation-fill-mode: forwards; */
-    /* top:auto; */
-    /* animation: expand 1s; */
-    /* animation: expand 1s infinite; */
    
 }
 
-/* @keyframes expand{
-   100%{top: 30%}
-}
-
-@keyframes contract{
-   100%{top: 55%}
-} */
 
 .infoFrame:hover{
-    /* cursor: pointer; */
-    /* height: 55%; */
-    /* top: 41%; */
-    /* animation-name: expand; */
     top: 41%
-    /* animation: expand 1s;
-    animation-fill-mode: forwards; */
-    /* animation-timing-function: ease; */
-    /* font-size: 1rem; */
 }
 
 
@@ -138,16 +99,11 @@ body{
     position: relative;
     width: auto;
     height: 22px;
-    /* left: 0px; */
-    /* top: 54px; */
-    /* stop: -19px; */
     background: rgba(0,0,0,.55);
     backdrop-filter: blur(5px);
 
     text-align: center;
     color: white;
-    
-    /* max-width: calc(100% - 31px); FOR TEXT */
 }
 
 .platformText{
@@ -196,13 +152,8 @@ body{
 
 .gameInfo{
     position: relative;
-    /* width: 255px;
-    height: 52px;
-    left: 7px;
-    top: 5px; */
     padding: 15px;
     padding-top: 10px;
-    /* height: 30%; */
 
 }
 
@@ -238,10 +189,6 @@ body{
 
     
    font-family: Arial, Helvetica, sans-serif;
-    /* width: 255px;
-    height: 68px;
-    left: 7px;
-    top: 57px; */
 }
 
 .priceOld{
@@ -258,8 +205,6 @@ body{
 }
 
 .heartIcon{
-    /* max-width: 16px;
-    min-width: 16px; */
     height: auto;
     display: flex;
     height:24px;
@@ -269,11 +214,9 @@ body{
 .likes{
     position: relative;
     height: 20%;
-    /* background-color: #63e3c2; */
     padding-left: 15px;
     display: flex;
     flex-direction: row;
-    /* margin-left: 3px; */
 }
 
 .likeNumber{
@@ -286,7 +229,6 @@ body{
 }
 
 .discountFrame{
-    /* display: flex; */
     position: absolute;
     color: #b3aac9;
     position: relative;
@@ -304,17 +246,12 @@ body{
 
     z-index:1;
     
-    /* width:fit-content;
-    height:fit-content; */
     object-fit:cover;
     position:relative;
 
-    /* width:100%; */
     max-width:255px;
     max-height: 350px;
     
-
-    /* align-content: center; */
     justify-content:center;
     align-items: center;
     justify-items: center; 
@@ -323,14 +260,14 @@ body{
 }
 
 .gameImage img{
-    /* position: relative;
-    display: block;
-    justify-content:center;
-    align-items: center;
-    justify-items: center; 
-    max-width: 255px; */
 
     max-width:100%;
     max-height:100%;
     
+}
+
+.ResultsFound{
+    color: white;
+    font-weight: 600;
+    height: 25px;
 }
