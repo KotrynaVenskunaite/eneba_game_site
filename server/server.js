@@ -1,3 +1,5 @@
+require('dotenv').config();
+console.log(process.env.DB_DATABASE)
 const express = require ('express');
 const mysql = require('mysql');
 const cors = require('cors');
@@ -6,11 +8,10 @@ const app = express();
 app.use(cors());
 
 const db = mysql.createConnection({
-    host: "localhost",
-    user: 'root',
-    password:'',
-    database: 'eneba'
-
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE
 })
 
 app.get('/games',(req,res)=>{

@@ -1,5 +1,3 @@
-import React, { useEffect, useState } from "react";
-
 function TopQuip() {
   return (
     <div className="topQuip">

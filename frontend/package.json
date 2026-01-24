@@ -1,5 +1,6 @@
 {
   "name": "eneba_react",
+  "homepage": "https://enebahomework.emoking.lol",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,6 +12,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.8",
+    "dotenv": "^17.2.3",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },

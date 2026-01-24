@@ -1,9 +1,4 @@
-import React, { useEffect, useState } from "react";
-
 function UpperTab() {
-  const [search, setSearch] = useState("");
-  //   let searchQuery = "";
-  console.log(search);
   return (
     <div className="UpperTab">
       <img

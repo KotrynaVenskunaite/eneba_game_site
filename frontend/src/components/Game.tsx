@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Fuse from "fuse.js";
 
-function GameComponent(props) {
-  const [data, setData] = useState([]);
+function GameComponent(props: any) {
+  const [data, setData] = useState<any[]>([]);
   useEffect(() => {
-    fetch("http://localhost:8081/games")
+    fetch("https://enebaapi.emoking.lol/games")
       .then((res) => res.json())
       .then((data) => setData(data))
       .catch((err) => console.log(err));
@@ -18,7 +18,7 @@ function GameComponent(props) {
 
   const fuseResult = fuse.search(props.query);
 
-  function calculatePrice(originalPrice, percentage) {
+  function calculatePrice(originalPrice: any, percentage: any) {
     let price = originalPrice - originalPrice * (percentage / 100);
 
     return Math.round(price * 100) / 100;
@@ -31,7 +31,7 @@ function GameComponent(props) {
   let searchNumber = props.query ? fuseResult.length : -1;
   console.log(searchNumber);
 
-  function imageSource(platform) {
+  function imageSource(platform: any) {
     switch (platform) {
       case "Steam":
         return "https://products.eneba.games/drms/v1/steam.svg";

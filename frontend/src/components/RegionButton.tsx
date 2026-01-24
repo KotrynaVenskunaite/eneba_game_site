@@ -1,5 +1,3 @@
-import React, { useEffect, useState } from "react";
-
 function RegionButton() {
   return (
     <div className="RegionButtonSpace">

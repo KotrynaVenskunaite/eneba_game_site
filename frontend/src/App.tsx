@@ -1,6 +1,5 @@
 import GameComponent from "./components/Game";
 import TopQuip from "./components/TopQuip";
-import UpperTab from "./components/UpperTab";
 
 import "./components/Game.css";
 import "./App.css";
@@ -67,7 +66,7 @@ function App() {
                 onChange={(e) => setSearch(e.target.value)}
               ></input>
               <button
-                onClick={(e) => setSearch("")}
+                onClick={() => setSearch("")}
                 className="xButton"
                 type="button"
                 aria-label="clear search"
